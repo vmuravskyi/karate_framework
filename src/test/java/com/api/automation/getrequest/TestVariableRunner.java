@@ -7,7 +7,7 @@ public class TestVariableRunner {
 	
 	@Test
 	public Karate runTest() {
-		return Karate.run("Variables.feature").relativeTo(getClass());
+		return Karate.run("variables.feature").relativeTo(getClass());
 	}
 	
 	

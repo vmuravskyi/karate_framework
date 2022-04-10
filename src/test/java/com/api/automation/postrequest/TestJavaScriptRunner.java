@@ -10,5 +10,4 @@ public class TestJavaScriptRunner {
 		return Karate.run("javaScriptExecutor").relativeTo(getClass());
 	}
 	
-	
 }

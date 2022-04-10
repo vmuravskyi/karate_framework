@@ -1,7 +1,7 @@
 Feature: To use the JSON path expression
 
   Background: Setup the Base path
-    Given url 'http://localhost:9898'
+    Given url 'https://jobportalkarate.herokuapp.com'
 
   Scenario: To get the value of property using json path expression
     Given path '/normal/webapi/all'

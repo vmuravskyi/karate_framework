@@ -2,7 +2,7 @@ Feature: To validate the GET End point
   To validate the get end point response
 
   Background: Setup the base url
-    Given url 'http://localhost:9898'
+    Given url 'https://jobportalkarate.herokuapp.com'
 
   Scenario: To get the data in JSON format
     Given path '/normal/webapi/all'
@@ -23,6 +23,7 @@ Feature: To validate the GET End point
     And match response.[0].experience[*] contains ['Mobile Iron','Apple']
     And match response.[0].project[0].technology[*] contains ['SQL Lite']
     And match response.[*].jobId contains 1
+    And print response
 
   Scenario: To get the data in JSON format and validate using fuzzy matcher
     Given path '/normal/webapi/all'

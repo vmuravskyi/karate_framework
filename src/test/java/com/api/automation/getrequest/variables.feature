@@ -8,7 +8,7 @@ Feature: Variables Creation in Karate Framework
   # * <def> <variable_name> = <value>
   Scenario: To create a Variable
     # Use Variable for repeating value
-    # Storing the data from a external file
+    # Storing the data from an external file
     # In the matcher expression
     # Passing the Data from one feature file to another
     Given def var_int = 10
@@ -18,7 +18,7 @@ Feature: Variables Creation in Karate Framework
     * def var_int_2 = var_int + 10
     And print "New Variable ==> ", var_int_2
     And print "BackGroud Section Variabel ==> ", app_name , page_lode_timeout
-    
+
 
   Scenario: Acces the Variable
     * def var_int = 1
@@ -28,3 +28,9 @@ Feature: Variables Creation in Karate Framework
     And print "Previous Scenario ==> ", var_string
     And print "Previous Scenario ==> ", var_int_2
     And print "BackGroud Section Variabel ==> ", app_name , page_lode_timeout
+
+  Scenario: Create and print a variable
+    * def var_int = 10
+    * def var_string = 'Volodymyr'
+    And print var_string, var_int
+

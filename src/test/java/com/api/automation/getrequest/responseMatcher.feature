@@ -2,7 +2,14 @@ Feature: To validate the GET End point
   To validate the get end point response
 
   Background: Setup the base url
-    Given url 'http://localhost:9898'
+    Given url 'https://jobportalkarate.herokuapp.com'
+
+  Scenario: To get data
+    Given url 'https://jobportalkarate.herokuapp.com/normal/webapi/all'
+    And header Accept = 'application/json'
+    When method get
+    Then status 200
+    And print response
 
   Scenario: To get the data in JSON format
     Given path '/normal/webapi/all'
@@ -90,7 +97,7 @@ Feature: To validate the GET End point
           "projectName": "Movie App"
         }
       ],
-      "jobDescription": "To develop andriod application",
+      "jobDescription": "To develop android application",
       "experience": [
         "Google",
         "Apple",
