@@ -12,6 +12,7 @@ Feature: To use the JSON path expression
     * def jobTitle = karate.jsonPath(response,"$[?(@.jobId == " + jobID + ")].jobTitle")
     * def jobDescription = karate.jsonPath(response,"$[?(@.jobId == 1)].jobDescription")
     * def experience = karate.jsonPath(response,"$[?(@.jobId == 1)].experience")
+    And print response
     And print "Job Title ==> ", jobTitle
     And print "Job Description ==> ", jobDescription
     And print "Experience ==> ", experience

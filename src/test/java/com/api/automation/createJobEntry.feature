@@ -2,7 +2,7 @@ Feature: To create the Job entry in the test application
   Helper file for POST /normal/webapi/add
 
   Scenario: To create the Job Entry with JSON data
-    Given url 'http://localhost:9898'
+    Given url 'https://jobportalkarate.herokuapp.com'
     And path '/normal/webapi/add'
     * def getRandomValue = function() {return Math.floor((100) * Math.random());}
     * def id = getRandomValue()

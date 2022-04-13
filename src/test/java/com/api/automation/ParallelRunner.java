@@ -15,4 +15,5 @@ public class ParallelRunner {
 		aRunner.parallel(5);
 		Runner.parallel(aRunner);
 	}
+
 }
