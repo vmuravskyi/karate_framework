@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import java.util.List;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -65,4 +66,11 @@ public class ProjectDto {
             .toHashCode();
     }
 
+    @Override
+    public String toString() {
+        return new ToStringBuilder(this)
+            .append("projectName", projectName)
+            .append("technology", technology)
+            .toString();
+    }
 }

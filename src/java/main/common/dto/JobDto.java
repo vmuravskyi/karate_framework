@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import java.util.List;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -104,4 +105,14 @@ public class JobDto {
             .toHashCode();
     }
 
+    @Override
+    public String toString() {
+        return new ToStringBuilder(this)
+            .append("jobId", jobId)
+            .append("jobTitle", jobTitle)
+            .append("jobDescription", jobDescription)
+            .append("experience", experience)
+            .append("project", project)
+            .toString();
+    }
 }

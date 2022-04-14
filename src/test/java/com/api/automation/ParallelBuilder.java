@@ -11,15 +11,15 @@ public class ParallelBuilder {
 	@Test
 	public void executeKarateTest() {
 		Builder aRunner = new Builder();
-		//aRunner.path("classpath:com/api/he automation/getrequest");
-		aRunner.path("classpath:com/api/automation");
-		// aRunner.parallel(5);
+//		aRunner.path("classpath:com/api/automation");
+		aRunner.path("classpath:com/api/automation/getrequest");
 		Results result = aRunner.parallel(5);
+		// print results
 		System.out.println("Total Feature => " + result.getFeatureCount());
 		System.out.println("Total Scenarios => " + result.getScenarioCount());
 		System.out.println("Passed Scenarios => " + result.getPassCount());
 		
-		Assertions.assertEquals(0, result.getFailCount(), "There are Some Failed Scenarios ");
+		Assertions.assertEquals(0, result.getFailCount(), "There are Failed Scenarios ");
 		
 	}
 

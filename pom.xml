@@ -70,7 +70,6 @@
             <groupId>io.rest-assured</groupId>
             <artifactId>rest-assured</artifactId>
             <version>5.0.1</version>
-            <scope>test</scope>
         </dependency>
 
 
@@ -103,22 +102,32 @@
                 <version>2.22.2</version>
                 <!-- ************************ Running the parallel runner with and without
                     system property ************************ -->
-                <!-- <configuration> <includes> <include>**/ParallelBuilder.java</include>
-                    </includes> </configuration> <configuration> <includes> <include>**/ParallelRunnerWithTags.java</include>
-                    </includes> <systemProperties> <location>com/api/automation</location> <tags>@Regression</tags>
-                    </systemProperties> <rerunFailingTestsCount>2</rerunFailingTestsCount> </configuration> -->
-
-                <!-- ************************ Running the parallel runner with Karate-Config.js
-                    ************************ -->
+                <!--                <configuration>-->
+                <!--                    <includes>-->
+                <!--                        <include>**/ParallelBuilder.java</include>-->
+                <!--                    </includes>-->
+                <!--                </configuration>-->
                 <configuration>
                     <includes>
-                        <include>**/ParallelBuilderWithCucumberReport.java</include>
+                        <include>**/ParallelRunnerWithTags.java</include>
                     </includes>
-                    <rerunFailingTestsCount>2</rerunFailingTestsCount>
                     <systemProperties>
-                        <karate.env>${karate.profile}</karate.env>
+                        <location>${location}</location>
+                        <tags>#{tags}</tags>
                     </systemProperties>
+                    <rerunFailingTestsCount>2</rerunFailingTestsCount>
                 </configuration>
+                <!-- ************************ Running the parallel runner with Karate-Config.js
+                    ************************ -->
+                <!--                <configuration>-->
+                <!--                    <includes>-->
+                <!--                        <include>**/ParallelBuilderWithCucumberReport.java</include>-->
+                <!--                    </includes>-->
+                <!--                    <rerunFailingTestsCount>2</rerunFailingTestsCount>-->
+                <!--                    <systemProperties>-->
+                <!--                        <karate.env>${karate.profile}</karate.env>-->
+                <!--                    </systemProperties>-->
+                <!--                </configuration>-->
             </plugin>
         </plugins>
     </build>

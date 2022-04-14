@@ -1,5 +1,5 @@
 Feature: To validate the GET End response from file
-  To validate the get end point response from extenal file
+  To validate the get end point response from external file
 
   Background: Setup the base url
     Given url 'https://jobportalkarate.herokuapp.com'

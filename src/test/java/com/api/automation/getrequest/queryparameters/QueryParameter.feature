@@ -2,19 +2,20 @@ Feature: To test the Get end point with Query Parameter
   GET /normal/webapi/find
 
   Background: Create and Initialize base Url
-    Given url 'http://localhost:9898'
+    Given url 'https://jobportalkarate.herokuapp.com'
 
   Scenario: To get the data using Query Parameter
     # Create the Job Entry
     # Get the newly created Job Entry using Query Param
     * def getRandomValue = function() {return Math.floor((100) * Math.random());}
     * def createJobId = getRandomValue()
-    * def createJob = call read("../../createJobEntryWithVariables.feature") { _url:'http://localhost:9898', _path:'/normal/webapi/add',_id:'#(createJobId)' }
+    * def jobTitle = 'Software Engg';
+    * def createJob = call read("../../createJobEntryWithFullVariables.feature") { _url:'https://jobportalkarate.herokuapp.com', _path:'/normal/webapi/add',_id:'#(createJobId)', _jobTitle:'#(jobTitle)' }
     # Send the Get request with query param
     Given path '/normal/webapi/find'
     #And param id = createJobId
-    #And param jobTitle = 'Software Engg - 2'
-    And params {id:'#(createJobId)', jobTitle:'Software Engg - 2'}
+    #And param jobTitle = '#(_jobTitle)'
+    And params {id:'#(createJobId)', jobTitle:'#(jobTitle)'}
     And headers {Accept:'application/json'}
     When method get
     Then status 200
@@ -25,7 +26,7 @@ Feature: To test the Get end point with Query Parameter
     # Get the newly created Job Entry using Query Param
     * def getRandomValue = function() {return Math.floor((100) * Math.random());}
     * def createJobId = getRandomValue()
-    * def createJob = call read("../../createJobEntryWithVariables.feature") { _url:'http://localhost:9898', _path:'/normal/webapi/add',_id:'#(createJobId)' }
+    * def createJob = call read("../../createJobEntryWithFullVariables.feature") { _url:'https://jobportalkarate.herokuapp.com', _path:'/normal/webapi/add',_id:'#(createJobId)' }
     # Send the Get request with query param
     Given path '/normal/webapi/find'
     And param id = 78542554
