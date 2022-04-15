@@ -17,17 +17,17 @@ Feature: Variables Creation in Karate Framework
     And print "String Variable ==> ", var_string
     * def var_int_2 = var_int + 10
     And print "New Variable ==> ", var_int_2
-    And print "BackGroud Section Variabel ==> ", app_name , page_lode_timeout
+    And print "Background Section Variable ==> ", app_name , page_lode_timeout
 
 
-  Scenario: Acces the Variable
+  Scenario: Access the Variable
     * def var_int = 1
     * def var_string = "New"
     * def var_int_2 = var_int + 90
     Given print "Previous Scenario ==> ", var_int
     And print "Previous Scenario ==> ", var_string
     And print "Previous Scenario ==> ", var_int_2
-    And print "BackGroud Section Variabel ==> ", app_name , page_lode_timeout
+    And print "Background Section Variable ==> ", app_name , page_lode_timeout
 
   Scenario: Create and print a variable
     * def var_int = 10

@@ -20,16 +20,15 @@ public class ParallelBuilderWithCucumberReport {
 	@Test
 	public void executeKarateTest() {
 		Builder aRunner = new Builder();
-		//aRunner.path("classpath:com/api/automation/getrequest");
-		aRunner.path("classpath:com/api/automation");
+		aRunner.path("classpath:com/api/automation/getrequest");
+//		aRunner.path("classpath:com/api/automation");
 		// aRunner.parallel(5);
 		Results result = aRunner.parallel(5);
 		System.out.println("Total Feature => " + result.getFeatureCount());
 		System.out.println("Total Scenarios => " + result.getScenarioCount());
 		System.out.println("Passed Scenarios => " + result.getPassCount());
 		generateCucumberReport(result.getReportDir());
-		Assertions.assertEquals(0, result.getFailCount(), "There are Some Failed Scenarios ");
-		
+		Assertions.assertEquals(0, result.getFailCount(), "There are failed scenarios ");
 	}
 	
 	// reportDirLocation --> C:\Data\GitHub\KarateFrameworkTutorial\target\surefire-reports
@@ -37,7 +36,7 @@ public class ParallelBuilderWithCucumberReport {
 		File reportDir = new File(reportDirLocation);
 		Collection<File> jsonCollection = FileUtils.listFiles(reportDir, new String[] {"json"}, true);
 		
-		List<String> jsonFiles = new ArrayList<String>();
+		List<String> jsonFiles = new ArrayList<>();
 		jsonCollection.forEach(file -> jsonFiles.add(file.getAbsolutePath()));
 		
 		Configuration configuration = new Configuration(reportDir, "Karate Run");

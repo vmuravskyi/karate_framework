@@ -2,7 +2,7 @@ Feature: To access the GET end point which is secure with Basic Auth
   GET /secure/webapi/all
 
   Background: Setup the Base path
-    Given url 'http://localhost:9898'
+    Given url 'https://jobportalkarate.herokuapp.com'
 
   Scenario: To access the GET end point with basic auth
     Given path '/secure/webapi/all'

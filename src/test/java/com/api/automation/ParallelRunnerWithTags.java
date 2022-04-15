@@ -56,7 +56,6 @@ public class ParallelRunnerWithTags {
         }
         aTagList = List.of(aTags);
         return aTagList;
-
     }
 
     private List<String> getLocation() {

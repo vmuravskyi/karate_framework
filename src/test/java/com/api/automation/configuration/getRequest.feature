@@ -6,7 +6,7 @@ Feature: To test the get end point of the application
     And print '========== This is Background Keyword ================='
 
   Scenario: To get all the data from application in JSON format
-    #Given url 'http://localhost:9898/normal/webapi/all'
+    #Given url 'https://jobportalkarate.herokuapp.com/normal/webapi/all'
     #Base Path + Context path
     Given path '/normal/webapi/all'
     When method get # Send the get request
@@ -14,7 +14,7 @@ Feature: To test the get end point of the application
     Then status 200 # the status code response should be 200
 
   Scenario: To get all the data from application in JSON format using path variable
-    #Given url 'http://localhost:9898'
+    #Given url 'https://jobportalkarate.herokuapp.com'
     And path '/normal/webapi/all'
     And header Accept = 'application/json'
     #Base Path + Context path

@@ -19,7 +19,7 @@ public class ParallelBuilder {
 		System.out.println("Total Scenarios => " + result.getScenarioCount());
 		System.out.println("Passed Scenarios => " + result.getPassCount());
 		
-		Assertions.assertEquals(0, result.getFailCount(), "There are Failed Scenarios ");
+		Assertions.assertEquals(0, result.getFailCount(), "There are failed scenarios ");
 		
 	}
 

@@ -19,7 +19,7 @@ public class ParallelRunner {
 //		aRunner.parallel(5);
 //      Results parallel = Runner.parallel(aRunner);
 
-        Assertions.assertEquals(0, parallelRun.getFailCount(), "There are Failed Scenarios");
+        Assertions.assertEquals(0, parallelRun.getFailCount(), "There are failed scenarios");
     }
 
 }
